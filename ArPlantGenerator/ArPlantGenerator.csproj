@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{382AE4D0-D882-4A15-A280-11E33C210ACB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArPlantGenerator</RootNamespace>
+    <AssemblyName>ArPlantGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="DeleteMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteMaterials.Designer.cs">
+      <DependentUpon>DeleteMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JointEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JointEditor.Designer.cs">
+      <DependentUpon>JointEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialEditorDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialEditorDB.Designer.cs">
+      <DependentUpon>MaterialEditorDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPlantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPlantForm.Designer.cs">
+      <DependentUpon>NewPlantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlantGenMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlantGenMainForm.Designer.cs">
+      <DependentUpon>PlantGenMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TreeDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TreeDisplay.Designer.cs">
+      <DependentUpon>TreeDisplay.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DeleteMaterials.resx">
+      <DependentUpon>DeleteMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JointEditor.resx">
+      <DependentUpon>JointEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialEditorDB.resx">
+      <DependentUpon>MaterialEditorDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPlantForm.resx">
+      <DependentUpon>NewPlantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlantGenMainForm.resx">
+      <DependentUpon>PlantGenMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArControlsMixed\ArControlsMixed.vcxproj">
+      <Project>{17a5ca3d-9732-4718-85d3-c9502bccc3bb}</Project>
+      <Name>ArControlsMixed</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ArControls\ArControls.csproj">
+      <Project>{f4e58880-9561-418b-9bd3-0d2fa7fa94f0}</Project>
+      <Name>ArControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArIOManaged\ArIOManaged.csproj">
+      <Project>{7b445b47-cc88-4358-975c-a0a27196eb6d}</Project>
+      <Name>ArIOManaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArIOMixed\ArIOMixed.vcxproj">
+      <Project>{a4e081f3-cb35-4f85-8d7a-f70ec62999df}</Project>
+      <Name>ArIOMixed</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArManaged\ArManaged.csproj">
+      <Project>{54b5a50b-f368-416c-a6ed-d8ccddc2954f}</Project>
+      <Name>ArManaged</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArScene\ArScene.csproj">
+      <Project>{41d45c66-a3cb-4843-9e1e-5ae76b4a1976}</Project>
+      <Name>ArScene</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
